@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Stack;
 
 /**
  * @auther: Li jx
@@ -13,12 +14,11 @@ public class Array<E> {
         data = (E[]) new Object[capacity];
         size = 0;
     }
-
     public Array() {
         this(10);
     }
 
-    //得到数组插入的个数
+    /**得到数组插入的个数*/
     public int getSize() {
         return size;
     }
@@ -59,6 +59,15 @@ public class Array<E> {
         }
         return data[index];
     }
+
+    public E getLast() {
+        return get(size - 1);
+    }
+
+    public E getFirst() {
+        return get(0);
+    }
+
     //通过指定index替换数据
     public void set(int index,E e) {
         if (index < 0 || index >= size) {
