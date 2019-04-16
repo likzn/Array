@@ -53,11 +53,26 @@ public class Main {
 //
 //            }
 //        }
-        int i = 300000;
-        LoopQueue<Integer> loopQueue = new LoopQueue<>();
-        System.out.println(testQueue(loopQueue, i));
-        ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
-        System.out.println(testQueue(arrayQueue, i));
+//        int i = 300000;
+//        LoopQueue<Integer> loopQueue = new LoopQueue<>();
+//        System.out.println(testQueue(loopQueue, i));
+//        ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
+//        System.out.println(testQueue(arrayQueue, i));
+
+        LinkedList<Integer> linkedList = new LinkedList();
+        for (int i = 0; i < 6; i++) {
+            linkedList.addFirst(i);
+        }
+        System.out.println(linkedList);
+        linkedList.set(2, 333);
+        System.out.println(linkedList);
+
+        linkedList.remove(2);
+        System.out.println(linkedList);
+        linkedList.removeFirst();
+        System.out.println(linkedList);
+        linkedList.removeLast();
+        System.out.println(linkedList);
     }
 
     public static double testQueue(Queue<Integer> queue, int opCounts) {
