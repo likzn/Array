@@ -1,5 +1,7 @@
 package LeetCode.LinkedList;
 
+import java.lang.management.BufferPoolMXBean;
+
 /**
  * @auther: Li jx
  * @date: 2019/4/12 14:24
@@ -7,16 +9,13 @@ package LeetCode.LinkedList;
  */
 public class link83 {
     public ListNode deleteDuplicates(ListNode head) {
-        ListNode cur = head;
-        if (cur == null) {
+        if (head == null||head.next==null ) {
             return head;
         }
-        while (cur.next!= null) {
-            if (cur.val == cur.next.val     ) {
-                cur.next = cur.next.next;
-                continue;
-            }
-            cur = cur.next;
+        head.next = deleteDuplicates(head.next);
+        if (head.next.val == head.val) {
+            head = head.next;
+
         }
         return head;
     }

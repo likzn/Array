@@ -10,6 +10,7 @@ import javafx.scene.shape.Circle;
 public class ListNode {
     int val;
     ListNode next;
+    int s;
 
     ListNode(int x) {
         val = x;
@@ -26,11 +27,8 @@ public class ListNode {
     }
 
     public static void main(String[] args) {
-        int[] ints = new int[]{1,2,3};
+        int[] ints = new int[]{1,2,2,2,3};
         ListNode l = set(ints);
-        while (l != null) {
-            System.out.println(l.val);
-            l = l.next;
-        }
+        new link82().deleteDuplicates(l);
     }
 }
