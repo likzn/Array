@@ -1,5 +1,7 @@
 package LeetCode.LinkedList;
 
+import java.util.List;
+
 /**
  * @auther: Li jx
  * @date: 2019/4/15 14:53
@@ -8,18 +10,17 @@ package LeetCode.LinkedList;
 public class link19 {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode node1 = head;
-        ListNode node2 = head;
+        ListNode dummyHead = new ListNode(0);
+        ListNode n1 = dummyHead;
+        ListNode n2 = dummyHead;
         while (n-- != 0) {
-            node1 = node1.next;
+            n2 = n2.next;
         }
-        while (node1.next.next != null) {
-            node2 = node2.next;
-            node1 = node1.next;
+        while (n2.next != null) {
+            n1 = n1.next;
+            n2 = n2.next;
         }
-        node2.next = node2.next.next;
-
+        n1.next = n1.next.next;
         return head;
-
     }
 }

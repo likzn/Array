@@ -662,7 +662,46 @@ class Solution {
         return  (int)Double.valueOf(stringBuilder.toString().length()==0?"0":stringBuilder.toString()).doubleValue();
     }
 
+    public int numJewelsInStones(String J, String S) {
+        int[] ints = new int[52];
+        for (int i = 0; i < S.length(); i++) {
+            ints[S.charAt(i) - 'A']++;
+        }
+        int sum = 0;
+        for (int i = 0; i < J.length(); i++) {
+            sum += ints[J.charAt(i) - 'A'];
+        }
+        return sum;
+    }
 
+    public boolean isPowerOfThree(int n) {
+        int sum = 0;
+        if (n == 0) {
+            return false;
+        }
+        while (n != 0) {
+            sum += n % 10;
+            n = n / 10;
+        }
+        return sum % 9 == 0;
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+        int sum = 0;
+        int i = 0;
+        char[] chars = s.toCharArray();
+        HashMap<Character,Integer> hashMap = new HashMap();
+        for (int j = 0; j < s.length(); j++) {
+            char c = chars[j];
+            if (hashMap.containsKey(c)) {
+                i = Math.max(i, hashMap.get(c)+1);
+            }
+            hashMap.put(c, j);
+            sum = Math.max(sum, j - i+1);
+        }
+        return sum;
+
+    }
 
 
 

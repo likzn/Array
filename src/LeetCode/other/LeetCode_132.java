@@ -10,15 +10,15 @@ import java.util.Arrays;
  * @description:
  */
 public class LeetCode_132 {
-    public int minCut(String s) {
-        int[] ints = get(s);
-        int i = ints.length-1;
-        Arrays.sort(ints);
-        int sum = 0;
-        while (sum < s.length()) {
-            sum += ints[i--];
-        }
-    }
+//    public int minCut(String s) {
+//        int[] ints = get(s);
+//        int i = ints.length-1;
+//        Arrays.sort(ints);
+//        int sum = 0;
+//        while (sum < s.length()) {
+//            sum += ints[i--];
+//        }
+//    }
 
 
 

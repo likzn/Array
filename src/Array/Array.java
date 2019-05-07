@@ -16,18 +16,31 @@ public class Array<E> {
         data = (E[]) new Object[capacity];
         size = 0;
     }
+
     public Array() {
         this(10);
     }
 
-    /**得到数组插入的个数*/
+    public Array(E[] e) {
+        data = (E[]) new Object[e.length];
+        for (int i = 0; i < e.length; i++) {
+            data[i] = e[i];
+        }
+        size = e.length;
+    }
+
+    /**
+     * 得到数组插入的个数
+     */
     public int getSize() {
         return size;
     }
+
     //得到数组容量
     public int getCapacity() {
         return data.length;
     }
+
     //判断是否为空
     public boolean isEmpty() {
         return size == 0;
@@ -38,7 +51,7 @@ public class Array<E> {
             throw new IllegalArgumentException("非法插入");
         }
         if (size == data.length) {
-           resize(2 * data.length);
+            resize(2 * data.length);
         }
         for (int i = size; i > index; i--) {
             data[i] = data[i - 1];
@@ -46,14 +59,17 @@ public class Array<E> {
         data[index] = e;
         size++;
     }
+
     //从数组尾插入数据
     public void addLast(E e) {
         add(size, e);
     }
+
     //从数组头插入数据
     public void addFirst(E e) {
         add(0, e);
     }
+
     //通过指定index得到数据
     public E get(int index) {
         if (index < 0 || index >= size) {
@@ -71,12 +87,13 @@ public class Array<E> {
     }
 
     //通过指定index替换数据
-    public void set(int index,E e) {
+    public void set(int index, E e) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException("非法index");
         }
         data[index] = e;
     }
+
     //数组是否包括这个数字
     public boolean contains(E e) {
         return find(e) > 0 ? true : false;
@@ -97,8 +114,8 @@ public class Array<E> {
             throw new IllegalArgumentException("非法index，删除失败");
         }
         E rm = data[index];
-        for (int i = index; i <size-1 ; i++) {
-            data[i] = data[i+1] ;
+        for (int i = index; i < size - 1; i++) {
+            data[i] = data[i + 1];
         }
         size--;
         data[size] = null;
@@ -113,7 +130,7 @@ public class Array<E> {
     }
 
     public E removeLast() {
-        return remove(size-1);
+        return remove(size - 1);
     }
 
     public void removeElement(E e) {
@@ -122,6 +139,7 @@ public class Array<E> {
             remove(index);
         }
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -143,5 +161,15 @@ public class Array<E> {
             newData[i] = data[i];
         }
         data = newData;
-     }
+    }
+
+    public void swap(int i, int j) {
+        if (i < 0 || j < 0 || i >= size || j >= size) {
+            throw new IllegalArgumentException("index is illegal");
+        }
+
+        E d = data[i];
+        data[i] = data[j];
+        data[j] = d;
+    }
 }

@@ -1,4 +1,4 @@
-package LeetCode.list;
+package LeetCode.Array;
 
 /**
  * @auther: Li jx

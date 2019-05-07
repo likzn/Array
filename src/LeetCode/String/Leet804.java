@@ -18,6 +18,7 @@ public class Leet804 {
             }
             set.add(stringBuilder.toString());
         }
+
         return set.size();
     }
 }
