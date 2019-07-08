@@ -24,7 +24,7 @@ public class LeetCode_107 {
         return list;
     }
 
-    public void levelOrderBottom(TreeNode root,List<List<Integer>> lists,int depth) {
+    public void levelOrderBottom(TreeNode root, List<List<Integer>> lists, int depth) {
         if (root == null) {
             return;
         }

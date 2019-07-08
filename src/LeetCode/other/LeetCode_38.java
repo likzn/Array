@@ -9,6 +9,7 @@ public class LeetCode_38 {
     public static void main(String[] args) {
         System.out.println(new LeetCode_38().countAndSay(5));
     }
+
     public String countAndSay(int n) {
         int sum = 1;
         char number = '1';
@@ -37,7 +38,6 @@ public class LeetCode_38 {
         }
         return sb.toString();
     }
-
 
 
 }

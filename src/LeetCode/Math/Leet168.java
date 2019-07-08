@@ -13,7 +13,7 @@ public class Leet168 {
         StringBuilder stringBuilder = new StringBuilder();
         while (n != 0) {
             n--;
-            stringBuilder.append((char)( n % 26 + 'A'));
+            stringBuilder.append((char) (n % 26 + 'A'));
             n = n / 26;
         }
         return stringBuilder.reverse().toString();

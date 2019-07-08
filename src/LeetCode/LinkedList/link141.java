@@ -15,11 +15,11 @@ public class link141 {
         while (fast != null) {
             for (int i = 0; i < 2; i++) {
                 fast = fast.next;
-                if (fast.next== null) {
+                if (fast.next == null) {
                     return false;
                 }
             }
-                slow.next = slow.next.next;
+            slow.next = slow.next.next;
             if (fast == slow) {
                 return true;
             }

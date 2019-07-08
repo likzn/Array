@@ -27,8 +27,8 @@ public class LeetCode_1026 {
         int leftS = left != null ? left.s : 0;
         int rightS = right != null ? right.s : 0;
         int min = Math.min(leftMin, rightMin);
-        int max = Math.max(leftMax , rightMax);
-        int s = Math.abs(root.val - min)- Math.abs(root.val - max)>0?Math.abs(root.val - min):Math.abs(root.val - max);
+        int max = Math.max(leftMax, rightMax);
+        int s = Math.abs(root.val - min) - Math.abs(root.val - max) > 0 ? Math.abs(root.val - min) : Math.abs(root.val - max);
         s = Math.max(s, leftS);
         s = Math.max(s, rightS);
         min = Math.min(min, root.val);
@@ -40,6 +40,7 @@ public class LeetCode_1026 {
         int min;
         int max;
         int s;
+
         public Tree(int min, int max, int s) {
             this.min = min;
             this.max = max;

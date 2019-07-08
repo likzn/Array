@@ -26,7 +26,9 @@ public class MapSum {
 
     private Node root;
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public MapSum() {
         root = new Node();
     }

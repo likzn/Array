@@ -63,7 +63,7 @@ public class AVLTree<K extends Comparable<K>, V> {
             return rightRotate(node);
         }
         //RR
-        if (balanceFactor <-1 && getBalanceFactor(node.right) <= 0) {
+        if (balanceFactor < -1 && getBalanceFactor(node.right) <= 0) {
             return leftRotate(node);
         }
         //LR
@@ -105,6 +105,7 @@ public class AVLTree<K extends Comparable<K>, V> {
 
         return x;
     }
+
     private int getBalanceFactor(Node node) {
         if (node == null) {
             return 0;
@@ -169,7 +170,7 @@ public class AVLTree<K extends Comparable<K>, V> {
         if (root == null) {
             return root;
         }
-        Node retNode ;
+        Node retNode;
         if (root.key.compareTo(key) > 0) {
             root.right = remove(root.right, key);
             retNode = root;
@@ -207,7 +208,7 @@ public class AVLTree<K extends Comparable<K>, V> {
             return rightRotate(retNode);
         }
         //RR
-        if (balanceFactor <-1 && getBalanceFactor(retNode.right) <= 0) {
+        if (balanceFactor < -1 && getBalanceFactor(retNode.right) <= 0) {
             return leftRotate(retNode);
         }
         //LR

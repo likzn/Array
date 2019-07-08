@@ -7,14 +7,14 @@ package LeetCode.Tree;
  */
 public class LeetCode_226 {
     public TreeNode invertTree(TreeNode root) {
-        if (root==null) {
+        if (root == null) {
             return root;
         } else {
             TreeNode treeNode = root.left;
             root.left = root.right;
             root.right = treeNode;
             root.left = invertTree(root.left);
-            root.right =invertTree(root.right);
+            root.right = invertTree(root.right);
         }
         return root;
     }

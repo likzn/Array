@@ -12,7 +12,7 @@ import java.util.List;
 public class LeetCode_257 {
     public List<String> binaryTreePaths(TreeNode root) {
         List list = new ArrayList();
-        binaryTreePaths(root, list,"");
+        binaryTreePaths(root, list, "");
         return list;
     }
 
@@ -21,12 +21,12 @@ public class LeetCode_257 {
             return;
         }
         if (root.right == null && root.left == null) {
-            s = s +( root.val);
+            s = s + (root.val);
             list.add(s);
         } else {
-            s+=(root.val);
-            binaryTreePaths(root.left, list, s+("->"));
-            binaryTreePaths(root.right, list, s+("->"));
+            s += (root.val);
+            binaryTreePaths(root.left, list, s + ("->"));
+            binaryTreePaths(root.right, list, s + ("->"));
         }
     }
 

@@ -113,7 +113,7 @@ public class LinkedList<E> {
     public boolean contains(E e) {
         Node cur = dummyHead.next;
         while (cur != null) {
-            if (cur.e .equals(e)) {
+            if (cur.e.equals(e)) {
                 return true;
             }
             cur = cur.next;
@@ -141,8 +141,9 @@ public class LinkedList<E> {
     }
 
     public E removeLast() {
-        return remove(size-1);
+        return remove(size - 1);
     }
+
     @Override
     public String toString() {
         Node cur = dummyHead.next;

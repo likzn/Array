@@ -19,7 +19,7 @@ public class LeetCode_1008 {
             return new TreeNode(num);
         }
         if (root.val > num) {
-            root.left=add(root.left, num);
+            root.left = add(root.left, num);
         } else {
             root.right = add(root.right, num);
         }

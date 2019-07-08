@@ -23,7 +23,7 @@ public class Leet495 {
                 sum += duration;
             }
         }
-        return sum+duration;
+        return sum + duration;
 
     }
 }

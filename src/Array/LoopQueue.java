@@ -5,20 +5,22 @@ package Array;
  * @date: 2019/4/8 18:56
  * @description:
  */
-public class LoopQueue<E> implements Queue<E>  {
-    private int front,tail;
+public class LoopQueue<E> implements Queue<E> {
+    private int front, tail;
     private int size;
     private E[] data;
 
     public LoopQueue() {
         this(10);
     }
+
     public LoopQueue(int capacity) {
         data = (E[]) new Object[capacity + 1];
         size = 0;
         front = 0;
         tail = 0;
     }
+
     @Override
     public int getSize() {
         return size;
@@ -43,7 +45,7 @@ public class LoopQueue<E> implements Queue<E>  {
         data[front] = null;
         front = (front + 1) % data.length;
         size--;
-        if (size == getCapacity() / 4 && getCapacity()/2!=0) {
+        if (size == getCapacity() / 4 && getCapacity() / 2 != 0) {
             resize(getCapacity() / 2);
         }
         return e;
@@ -65,7 +67,7 @@ public class LoopQueue<E> implements Queue<E>  {
     }
 
     private void resize(int capacity) {
-        E[] newData = (E[]) new Object[capacity+1];
+        E[] newData = (E[]) new Object[capacity + 1];
         for (int i = 0; i < size; i++) {
             newData[i] = data[(front + i) % data.length];
         }
@@ -77,7 +79,7 @@ public class LoopQueue<E> implements Queue<E>  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("Array.LoopQueue:Size:%d ,Capacity:%d\n", size, data.length-1));
+        sb.append(String.format("Array.LoopQueue:Size:%d ,Capacity:%d\n", size, data.length - 1));
         sb.append("Front:[");
         for (int i = front; i != tail; i = (i + 1) % data.length) {
             sb.append(data[i]);

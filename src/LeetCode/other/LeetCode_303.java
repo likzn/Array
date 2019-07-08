@@ -7,9 +7,10 @@ package LeetCode.other;
  */
 public class LeetCode_303 {
     private int[] ints;
+
     public LeetCode_303(int[] nums) {
-        ints = new int[nums.length+1];
-        for (int i = 1; i < nums.length+1; i++) {
+        ints = new int[nums.length + 1];
+        for (int i = 1; i < nums.length + 1; i++) {
             ints[i] = ints[i - 1] + nums[i - 1];
         }
     }

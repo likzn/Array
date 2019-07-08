@@ -70,7 +70,7 @@ public class Leet211 {
             return match(word, root.next[c - 'a'], index + 1);
         } else {
             for (Node node : root.next) {
-                if (node!=null&&match(word, node, index + 1)) {
+                if (node != null && match(word, node, index + 1)) {
                     return true;
                 }
             }

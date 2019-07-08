@@ -8,8 +8,8 @@ package LeetCode.other;
 public class LeetCode_167 {
 
     public int[] twoSum(int[] numbers, int target) {
-        int a = 0 ;
-        int b = numbers.length-1;
+        int a = 0;
+        int b = numbers.length - 1;
         while (true) {
             if (numbers[a] + numbers[b] > target) {
                 b--;
@@ -22,8 +22,6 @@ public class LeetCode_167 {
         }
         return new int[]{++a, ++b};
     }
-
-
 
 
 }

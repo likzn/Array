@@ -19,7 +19,7 @@ public class Leet219 {
                     return true;
                 }
             }
-                map.put(nums[i], i);
+            map.put(nums[i], i);
         }
         return false;
     }

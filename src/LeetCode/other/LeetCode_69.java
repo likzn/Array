@@ -11,7 +11,7 @@ public class LeetCode_69 {
             return 0;
         }
         double a = x;
-        while (Math.abs(a-(a + x / a) / 2)>Math.pow(10,-6)) {
+        while (Math.abs(a - (a + x / a) / 2) > Math.pow(10, -6)) {
 
             a = (a + x / a) / 2;
         }

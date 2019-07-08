@@ -10,7 +10,7 @@ import java.util.TreeMap;
  */
 public class Leet961 {
     public int repeatedNTimes(int[] A) {
-        TreeMap<Integer,Integer> treeMap = new TreeMap();
+        TreeMap<Integer, Integer> treeMap = new TreeMap();
         for (int i = 0; i < A.length; i++) {
             if (!treeMap.containsKey(A[i])) {
                 treeMap.put(A[i], 1);

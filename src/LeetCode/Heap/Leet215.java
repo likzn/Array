@@ -17,8 +17,7 @@ public class Leet215 {
         for (int i = 0; i < nums.length; i++) {
             if (priorityQueue.size() < k) {
                 priorityQueue.add(nums[i]);
-            }
-            else if (nums[i] >= priorityQueue.peek()) {
+            } else if (nums[i] >= priorityQueue.peek()) {
                 priorityQueue.remove();
                 priorityQueue.add(nums[i]);
             }

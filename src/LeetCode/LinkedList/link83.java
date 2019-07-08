@@ -9,7 +9,7 @@ import java.lang.management.BufferPoolMXBean;
  */
 public class link83 {
     public ListNode deleteDuplicates(ListNode head) {
-        if (head == null||head.next==null ) {
+        if (head == null || head.next == null) {
             return head;
         }
         head.next = deleteDuplicates(head.next);

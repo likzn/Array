@@ -9,9 +9,9 @@ public class link647 {
     public static int countSubstrings(String s) {
         int[] ints = get(s);
         int sum = 0;
-        for (int i = 1; i < ints.length-1; i++) {
+        for (int i = 1; i < ints.length - 1; i++) {
             if (ints[i] % 2 == 1) {
-                sum += (ints[i] -1) / 2;
+                sum += (ints[i] - 1) / 2;
             } else {
                 sum += ints[i] / 2;
             }
@@ -33,7 +33,7 @@ public class link647 {
         for (int i = 0; i < newString.length(); i++) {
             int left = 2 * center - i;
             if (rightSide > i) {
-                if (ints[left]+i<rightSide) {
+                if (ints[left] + i < rightSide) {
                     ints[i] = ints[left];
                     continue;
                 } else {
@@ -49,7 +49,7 @@ public class link647 {
                 }
             }
             center = i;
-            rightSide = center + ints[i] ;
+            rightSide = center + ints[i];
         }
         return ints;
     }

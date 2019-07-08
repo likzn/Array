@@ -19,7 +19,7 @@ public class LeetCode_110 {
         Node left = is(root.left);
         Node right = is(root.right);
         if (Math.abs(left.depth - right.depth) <= 1 && left.isTree == true && right.isTree == true) {
-            return new Node(true, Math.max(left.depth, right.depth)+1);
+            return new Node(true, Math.max(left.depth, right.depth) + 1);
         }
         return new Node(false, 0);
     }

@@ -15,7 +15,7 @@ public class Leet5051 {
         int[] a = points[0];
         int[] b = points[1];
         int[] c = points[2];
-        if (Arrays.equals(a, c) ||Arrays.equals(b, a) || Arrays.equals(b, c)) {
+        if (Arrays.equals(a, c) || Arrays.equals(b, a) || Arrays.equals(b, c)) {
             return false;
         }
         if ((b[1] - a[1]) == 0) {

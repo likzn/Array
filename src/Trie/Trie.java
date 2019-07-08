@@ -1,4 +1,5 @@
 package Trie;
+
 import java.util.TreeMap;
 
 /**
@@ -7,9 +8,9 @@ import java.util.TreeMap;
  * @description:
  */
 public class Trie {
-    private class Node{
+    private class Node {
         private boolean isWorld;
-        private TreeMap<Character,Node> next;
+        private TreeMap<Character, Node> next;
 
         public Node(boolean isWorld) {
             this.isWorld = isWorld;
@@ -20,6 +21,7 @@ public class Trie {
             this(false);
         }
     }
+
     private Node root;
     private int size;
 
@@ -27,6 +29,7 @@ public class Trie {
         root = new Node();
         size = 0;
     }
+
     public void add(String word) {
         Node cur = root;
         for (int i = 0; i < word.length(); i++) {
@@ -36,10 +39,10 @@ public class Trie {
             }
             cur = cur.next.get(c);
         }
-            if (!cur.isWorld) {
-                cur.isWorld = true;
-                size++;
-            }
+        if (!cur.isWorld) {
+            cur.isWorld = true;
+            size++;
+        }
     }
 
     public boolean contains(String word) {

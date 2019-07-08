@@ -22,7 +22,7 @@ public class Main {
             list.add(maxHeap.extractMax());
         }
         for (int i = 1; i < n; i++) {
-            if (list.get(i - 1) >=list.get(i)) {
+            if (list.get(i - 1) >= list.get(i)) {
                 continue;
             }
             System.out.println(" qq");

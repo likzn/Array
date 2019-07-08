@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class LeetCode_897 {
     List<Integer> list = new ArrayList();
+
     public TreeNode increasingBST(TreeNode root) {
         order(root);
         TreeNode treeNode = new TreeNode(list.get(0));

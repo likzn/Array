@@ -21,8 +21,6 @@ public class LeetCode_132 {
 //    }
 
 
-
-
     public static int[] get(String s) {
         int center = 0;
         int rightSide = 0;
@@ -37,7 +35,7 @@ public class LeetCode_132 {
         for (int i = 0; i < newString.length(); i++) {
             int left = 2 * center - i;
             if (rightSide > i) {
-                if (ints[left]+i<rightSide) {
+                if (ints[left] + i < rightSide) {
                     ints[i] = ints[left];
                     continue;
                 } else {
@@ -53,7 +51,7 @@ public class LeetCode_132 {
                 }
             }
             center = i;
-            rightSide = center + ints[i] ;
+            rightSide = center + ints[i];
         }
         return ints;
     }

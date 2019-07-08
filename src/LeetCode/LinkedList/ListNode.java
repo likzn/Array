@@ -27,7 +27,7 @@ public class ListNode {
     }
 
     public static void main(String[] args) {
-        int[] ints = new int[]{1,2,2,2,3};
+        int[] ints = new int[]{1, 2, 2, 2, 3};
         ListNode l = set(ints);
         new link82().deleteDuplicates(l);
     }

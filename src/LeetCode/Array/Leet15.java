@@ -43,7 +43,7 @@ public class Leet15 {
                     }
                 } else if (nums[a] + nums[b] < nums[i]) {
                     a++;
-                    while (nums[a] == nums[a+1]) {
+                    while (nums[a] == nums[a + 1]) {
                         a++;
 
                     }

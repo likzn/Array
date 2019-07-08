@@ -11,7 +11,7 @@ import java.util.Stack;
  */
 public class Leet503 {
     public int[] nextGreaterElements(int[] nums) {
-        int[] ints = new int[nums.length*2];
+        int[] ints = new int[nums.length * 2];
         int[] ints1 = new int[nums.length];
         Arrays.fill(ints1, -1);
         for (int i = 0; i < nums.length; i++) {

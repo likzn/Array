@@ -9,6 +9,7 @@ public class LeetCode_214 {
     public static void main(String[] args) {
 
     }
+
     public String shortestPalindrome(String s) {
         return "";
     }

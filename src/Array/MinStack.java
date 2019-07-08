@@ -28,7 +28,7 @@ class MinStack {
                 stack.pop();
                 stack.push(x);
                 stack.push(x);
-            }else {
+            } else {
                 stack.pop();
                 stack.push(x);
                 stack.push(i);
@@ -43,7 +43,7 @@ class MinStack {
         int a = Integer.MAX_VALUE;
 
         while (iterator.hasNext()) {
-            int b= iterator.next();
+            int b = iterator.next();
             if (a > b) {
                 a = b;
             }

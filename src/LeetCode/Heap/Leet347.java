@@ -25,7 +25,7 @@ public class Leet347 {
             int a = iterator.next();
             if (queue.size() < k) {
                 queue.add(a);
-            } else if (map.get(queue.peek()) <map.get(a) ) {
+            } else if (map.get(queue.peek()) < map.get(a)) {
                 queue.remove();
                 queue.add(a);
             }

@@ -12,7 +12,7 @@ public class Leet973 {
     public int[][] kClosest(int[][] points, int K) {
         int[] ints = new int[points.length];
         for (int i = 0; i < points.length; i++) {
-            ints[i]=points[i][0] * points[i][0] + points[i][1] * points[i][1];
+            ints[i] = points[i][0] * points[i][0] + points[i][1] * points[i][1];
         }
         PriorityQueue<Integer> queue = new PriorityQueue(
                 (a, b) -> ints[(int) b] - ints[(int) a]
@@ -34,7 +34,7 @@ public class Leet973 {
     }
 
     public static void main(String[] args) {
-        new Leet973().kClosest(new int[][]{{3, 3}, {5, 1},{-2,4}}, 2);
+        new Leet973().kClosest(new int[][]{{3, 3}, {5, 1}, {-2, 4}}, 2);
     }
 }
 

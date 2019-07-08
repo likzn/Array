@@ -496,7 +496,7 @@ class Solution {
         }
         return sum;
 
-        }
+    }
 
     public String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) return "";
@@ -513,7 +513,7 @@ class Solution {
         return haystack.indexOf(needle);
     }
 
-    public static int  maxProfit2(int[] prices) {
+    public static int maxProfit2(int[] prices) {
         // [7,1,5,3,6,4]
         int small = -1;
         int cur = 0;
@@ -523,9 +523,9 @@ class Solution {
             if (small == -1) {
                 small = i;
             }
-            if (i - small> sum) {
+            if (i - small > sum) {
                 cur = i - small;
-            } else if (i -small< sum) {
+            } else if (i - small < sum) {
                 allSum += sum;
                 sum = 0;
                 small = i;
@@ -542,7 +542,7 @@ class Solution {
         k = k % nums.length;
         int[] ints = new int[nums.length];
         for (int j = 0; j < nums.length; j++) {
-            ints[j]=nums[(nums.length - k + j) % nums.length] ;
+            ints[j] = nums[(nums.length - k + j) % nums.length];
         }
         for (int i = 0; i < nums.length; i++) {
             nums[i] = ints[i];
@@ -563,7 +563,7 @@ class Solution {
         int i = 0;
         int j = 0;
         int a = 0;
-        int[] ints = new int[nums1.length<nums2.length?nums2.length:nums1.length];
+        int[] ints = new int[nums1.length < nums2.length ? nums2.length : nums1.length];
         while (i < nums1.length && j < nums2.length) {
             if (nums1[i] < nums2[j]) {
                 i++;
@@ -624,6 +624,7 @@ class Solution {
         }
         return -1;
     }
+
     public boolean isAnagram(String s, String t) {
         int[] ints = new int[26];
         int[] ints1 = new int[26];
@@ -634,12 +635,13 @@ class Solution {
             ints1[chars1[i] - 'a']++;
         }
         for (int i = 0; i < 26; i++) {
-            if (ints[chars[i]]!=ints1[chars[i]]) {
+            if (ints[chars[i]] != ints1[chars[i]]) {
                 return false;
             }
         }
         return true;
     }
+
     public int myAtoi(String str) {
         StringBuilder stringBuilder = new StringBuilder();
         char[] chars = str.toCharArray();
@@ -659,7 +661,7 @@ class Solution {
                 return 0;
             }
         }
-        return  (int)Double.valueOf(stringBuilder.toString().length()==0?"0":stringBuilder.toString()).doubleValue();
+        return (int) Double.valueOf(stringBuilder.toString().length() == 0 ? "0" : stringBuilder.toString()).doubleValue();
     }
 
     public int numJewelsInStones(String J, String S) {
@@ -690,19 +692,18 @@ class Solution {
         int sum = 0;
         int i = 0;
         char[] chars = s.toCharArray();
-        HashMap<Character,Integer> hashMap = new HashMap();
+        HashMap<Character, Integer> hashMap = new HashMap();
         for (int j = 0; j < s.length(); j++) {
             char c = chars[j];
             if (hashMap.containsKey(c)) {
-                i = Math.max(i, hashMap.get(c)+1);
+                i = Math.max(i, hashMap.get(c) + 1);
             }
             hashMap.put(c, j);
-            sum = Math.max(sum, j - i+1);
+            sum = Math.max(sum, j - i + 1);
         }
         return sum;
 
     }
-
 
 
     public static void main(String[] args) {
@@ -712,8 +713,23 @@ class Solution {
 //        System.out.println(majorityElement(a));
 //        String s = "IV";
 //
-        int[] ints = new int[]{2,1,2,0,1};
-        String s ="ss";
+        int[] ints = new int[]{2, 1, 2, 0, 1};
+        String s = "ss";
         new Solution().firstUniqChar(s);
     }
+
+    public int minCostClimbingStairs(int[] cost) {
+
+        int[] costAll = new int[cost.length];
+        costAll[0] = cost[0];
+        costAll[1] = cost[1];
+        int min;
+        for (int i = 2; i < cost.length ; i++) {
+            min = (costAll[i - 1] <= costAll[i - 2] ? costAll[i - 1] : costAll[i - 2]);
+            costAll[i] = min + cost[i];
+        }
+        int length = costAll.length;
+        return costAll[length-1] <= costAll[length - 2] ? costAll[length - 1] : costAll[length - 2];
+    }
+
 }

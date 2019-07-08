@@ -8,7 +8,7 @@ import java.util.TreeSet;
  * @date: 2019/4/11 19:28
  * @description:
  */
-public class LinkedListQueue<E> implements Queue<E>{
+public class LinkedListQueue<E> implements Queue<E> {
     private class Node {
         private E e;
         private Node next;
@@ -78,7 +78,7 @@ public class LinkedListQueue<E> implements Queue<E>{
 
     @Override
     public boolean isEmpty() {
-        return size==0;
+        return size == 0;
     }
 
     @Override

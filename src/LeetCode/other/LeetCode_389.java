@@ -22,7 +22,7 @@ public class LeetCode_389 {
                 return (char) (i + 'a');
             }
         }
-        return  ' ';
+        return ' ';
 
     }
 

@@ -1,6 +1,12 @@
 package LeetCode.LinkedList;
 
+import com.sun.xml.internal.ws.api.pipe.NextAction;
 import org.w3c.dom.NodeList;
+
+import javax.swing.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * @auther: Li jx
@@ -8,36 +14,38 @@ import org.w3c.dom.NodeList;
  * @description:
  */
 public class link23 {
-    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode dummyHead = new ListNode(-1);
-        ListNode head = dummyHead;
-        while (l1!= null && l2!= null) {
-            if (l1.val < l2.val) {
-                head.next = l1;
-                l1 = l1.next;
-                head = head.next;
-            } else if (l1.val > l2.val) {
-                head.next = l2;
-                l2 = l2.next;
-                head = head.next;
+    public ListNode mergeKLists(ListNode[] lists) {
+        PriorityQueue<ListNode> priorityQueue = new PriorityQueue<>(new Comparator<ListNode>() {
+
+            @Override
+            public int compare(ListNode o1, ListNode o2) {
+                if (o1.val < o2.val) {
+                    return -1;
+                } else if (o1.val == o2.val) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+            }
+        });
+
+        for (ListNode l : lists) {
+            if (l != null) {
+
+            priorityQueue.add(l);
             }
         }
-        if (l1 == null) {
-            head.next = l2;
-        }
-        if (l2 == null) {
-            head.next = l1;
+        ListNode dummyHead = new ListNode(0);
+        ListNode p = dummyHead;
+        while (!priorityQueue.isEmpty()) {
+            ListNode node = priorityQueue.poll();
+            p.next = node;
+            p = p.next;
+            if (node.next != null) {
+                priorityQueue.add(node.next);
+            }
         }
         return dummyHead.next;
-    }
 
-    public static void main(String[] args) {
-        ListNode listNode = new ListNode(1);
-        listNode.next = new ListNode(2);
-        listNode.next.next = new ListNode(4);
-        ListNode listNode1 = new ListNode(1);
-        listNode1.next = new ListNode(3);
-        listNode1.next.next = new ListNode(4);
-        mergeTwoLists(listNode1, listNode);
     }
 }

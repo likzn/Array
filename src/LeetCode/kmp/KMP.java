@@ -15,7 +15,7 @@ public class KMP {
         int i = 0;
         int j = 0;
         while (i < s1.length && j < p2.length) {
-            if (j==-1||s1[i] == p2[j]) {
+            if (j == -1 || s1[i] == p2[j]) {
                 i++;
                 j++;
             } else {
@@ -30,14 +30,13 @@ public class KMP {
     }
 
 
-
     public static int[] getNext(String s) {
         char[] p = s.toCharArray();
         int next[] = new int[s.length()];
         next[0] = -1;
         int k = -1;
         int j = 0;
-        while (j < p.length-1) {
+        while (j < p.length - 1) {
             if (k == -1 || p[k] == p[j]) {
                 if (p[++j] == p[++k]) {
                     next[j] = next[k];

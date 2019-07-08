@@ -10,7 +10,7 @@ import java.util.Date;
  * @date: 2019/4/22 20:04
  * @description:
  */
-public class MaxHeap<E extends Comparable<E>>  {
+public class MaxHeap<E extends Comparable<E>> {
     private Array<E> array;
 
     public MaxHeap(int capacity) {

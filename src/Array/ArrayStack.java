@@ -11,6 +11,7 @@ public class ArrayStack<E> implements Stack<E> {
     public ArrayStack(int capacity) {
         array = new Array(capacity);
     }
+
     public ArrayStack() {
         array = new Array();
     }
@@ -53,7 +54,7 @@ public class ArrayStack<E> implements Stack<E> {
         sb.append("[");
         for (int i = 0; i < array.getSize(); i++) {
             sb.append(array.get(i));
-            if (i != array.getSize()-1) {
+            if (i != array.getSize() - 1) {
                 sb.append(", ");
             }
         }

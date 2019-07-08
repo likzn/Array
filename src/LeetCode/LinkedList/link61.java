@@ -15,13 +15,13 @@ public class link61 {
         }
         ListNode h = head;
         ListNode tail = head;
-        int size =1;
-        while (tail!=null&&tail.next != null) {
+        int size = 1;
+        while (tail != null && tail.next != null) {
             tail = tail.next;
             size++;
         }
         k = k % size;
-        while (k--!=0) {
+        while (k-- != 0) {
             tail.next = new ListNode(h.val);
             tail = tail.next;
             h = h.next;

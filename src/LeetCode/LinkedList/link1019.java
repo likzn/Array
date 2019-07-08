@@ -14,11 +14,11 @@ import java.util.Stack;
 public class link1019 {
     public int[] nextLargerNodes(ListNode head) {
         Stack<ListNode> stack = new Stack<>();
-        HashMap<ListNode , Integer> hashMap = new HashMap();
+        HashMap<ListNode, Integer> hashMap = new HashMap();
         int i = 0;
         ListNode h = head;
         while (h != null) {
-            while (!stack.isEmpty()&&stack.peek().val < h.val) {
+            while (!stack.isEmpty() && stack.peek().val < h.val) {
                 hashMap.put(stack.pop(), h.val);
             }
             stack.push(h);
@@ -26,8 +26,8 @@ public class link1019 {
             i++;
         }
         int[] ints = new int[i];
-            for (int j = 0; j < i; j++) {
-            ints[j] = hashMap.getOrDefault(head,0);
+        for (int j = 0; j < i; j++) {
+            ints[j] = hashMap.getOrDefault(head, 0);
             head = head.next;
         }
         return ints;

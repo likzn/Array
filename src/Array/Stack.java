@@ -7,9 +7,13 @@ package Array;
  */
 public interface Stack<E> {
     void push(E e);
+
     boolean isEmpty();
+
     E pop();
+
     E peek();
+
     int getSize();
 
 }

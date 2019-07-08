@@ -88,7 +88,7 @@ public class Main {
 
         long endTime = System.nanoTime();
 
-        return (endTime - startTime)/1000000000.0;
+        return (endTime - startTime) / 1000000000.0;
     }
 
 }

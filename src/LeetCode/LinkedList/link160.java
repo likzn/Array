@@ -26,7 +26,7 @@ public class link160 {
                 a = a.next;
             }
         } else {
-            for (int i = 0; i < sizeB-sizeA; i++) {
+            for (int i = 0; i < sizeB - sizeA; i++) {
                 b = b.next;
             }
         }

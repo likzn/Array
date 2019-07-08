@@ -24,15 +24,15 @@ public class link234 {
         if (size % 2 == 1) {
             cur = cur.next;
         }
-            while (cur != null) {
-                if (cur.val == stack.pop()) {
-                    cur = cur.next;
-                    continue;
-                }
-                return false;
-
+        while (cur != null) {
+            if (cur.val == stack.pop()) {
+                cur = cur.next;
+                continue;
             }
-            return true;
+            return false;
+
         }
+        return true;
+    }
 
 }

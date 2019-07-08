@@ -15,6 +15,7 @@ public class ArrayQueue<E> implements Queue<E> {
     public ArrayQueue(int capacity) {
         array = new Array<>(capacity);
     }
+
     @Override
     public int getSize() {
         return array.getSize();
@@ -47,7 +48,7 @@ public class ArrayQueue<E> implements Queue<E> {
         sb.append("Front [");
         for (int i = 0; i < array.getSize(); i++) {
             sb.append(array.get(i));
-            if (i != array.getSize()-1) {
+            if (i != array.getSize() - 1) {
                 sb.append(", ");
             }
         }
