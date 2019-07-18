@@ -8,9 +8,9 @@ import javafx.scene.shape.Circle;
  * @description:
  */
 public class ListNode {
-    int val;
-    ListNode next;
-    int s;
+    public int val;
+    public ListNode next;
+
 
     ListNode(int x) {
         val = x;
