@@ -1,5 +1,7 @@
 package LeetCode.other;
 
+import Array.Array;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,19 +14,20 @@ import java.util.List;
 public class Leet881 {
     public int numRescueBoats(int[] people, int limit) {
         Arrays.sort(people);
-        int size = 0;
-        int a = 0;
-        int b = people.length - 1;
-        while (a <= b) {
-            if (people[a] + people[b] > limit) {
-                b--;
+        int num = 0;
+        int start = 0;
+        int finsh = people.length - 1;
+        while (start <= finsh) {
+            if (people[start] + people[finsh] <= limit) {
+                finsh = finsh - 1;
+                start = start + 1;
+                num++;
             } else {
-                a++;
-                b--;
+                finsh = finsh - 1;
+                num++;
             }
-            size++;
         }
-        return size;
+        return num;
     }
 
 }
