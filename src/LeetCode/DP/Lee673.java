@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @date: 2019/8/7 14:19
  * @description:
  */
-public class Lee673 {
+public class Lee673 implements Cloneable{
     public int findNumberOfLIS(int[] nums) {
         if (nums.length == 0) {
             return 0;

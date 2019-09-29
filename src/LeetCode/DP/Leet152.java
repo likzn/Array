@@ -25,7 +25,5 @@ public class Leet152 {
         return imax;
     }
 
-    public static void main(String[] args) {
-        new Leet152().maxProduct(new int[]{0, 2});
-    }
+
 }

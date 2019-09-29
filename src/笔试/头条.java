@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * @author: Li jx
  * @date: 2019/9/15 16:14
- * @description:
+ * @description: 1.8
  */
 public class 头条 {
     //1
