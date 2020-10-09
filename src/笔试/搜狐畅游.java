@@ -48,7 +48,6 @@ public class 搜狐畅游 {
 //            }
 //        }
 //        System.out.println(dp[n - 1][m]);
-        new ThreadA().start();
         new ThreadB().start();
 
     }

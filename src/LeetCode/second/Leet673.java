@@ -1,47 +1,44 @@
-package LeetCode.DP;
+package LeetCode.second;
 
 import Array.Array;
+import LeetCode.DP.Lee673;
 
 import java.util.Arrays;
 
 /**
  * @author: Li jx
- * @date: 2019/8/7 14:19
+ * @date: 2019/11/7 19:44
  * @description:
  */
-public class Lee673 implements Cloneable{
+public class Leet673 {
     public int findNumberOfLIS(int[] nums) {
-        if (nums.length == 0) {
-            return 0;
-        }
         int[] dp = new int[nums.length];
-        int[] count = new int[dp.length];
-        Arrays.fill(count, 1);
+        int[] dpConut = new int[nums.length];
+        Arrays.fill(dpConut, 1);
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
                     if (dp[j] + 1 > dp[i]) {
-                        dp[i] = Math.max(dp[j] + 1, dp[i]);
-                        count[i] = count[j];
+                        dp[i] = dp[j] + 1;
+                        dpConut[i] = dpConut[j];
                     } else if (dp[j] + 1 == dp[i]) {
-                        count[i] += count[j];
+                        dpConut[i] += dpConut[j];
                     }
                 }
             }
-            max = Math.max(max, dp[i]);
+            max = Math.max(dp[i], max);
         }
-        int ans = 0;
+        int count = 0;
         for (int i = 0; i < dp.length; i++) {
-            if (max == dp[i]) {
-                ans+=count[i];
+            if (dp[i] == max) {
+                count += dpConut[i];
             }
         }
-        return ans;
-
+        return count;
     }
 
     public static void main(String[] args) {
-        new Lee673().findNumberOfLIS(new int[]{1, 2, 4, 3, 5, 4, 7, 2});
+        new Leet673().findNumberOfLIS(new int[]{1,2,3,1,2,3,1,2,3});
     }
 }

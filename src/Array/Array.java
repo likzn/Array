@@ -1,6 +1,6 @@
 package Array;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Stack;
 
 /**
@@ -171,5 +171,54 @@ public class Array<E> {
         E d = data[i];
         data[i] = data[j];
         data[j] = d;
+    }
+
+    static int res = 0;
+
+    public static int GetMaxConsecutiveOnes(int[] arr, int k) {
+        dfs(arr, k);
+        return res;
+    }
+
+    public static void dfs(int[] arr, int k) {
+        if(k<0){
+            return;
+        }
+        if (k == 0) {
+            int sum = 0;
+            for (int value : arr) {
+                if (1 == value) {
+                    sum++;
+                } else {
+                    res = Math.max(res, sum);
+                    sum = 0;
+                }
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]==0){
+                arr[i]=1;
+                dfs(arr, k - 1);
+                arr[i] = 0;
+            }
+        }
+    }
+    //[1,1,1,0,0,0,1,1,1,1,0],2
+    public static void main(String[] args) {
+        int[] i = new int[11];
+        i[0] = 1;
+        i[1] = 1;
+        i[2] = 1;
+        i[3] = 0;
+        i[4] = 0;
+        i[5] = 0;
+        i[6] = 1;
+        i[7] = 1;
+        i[8] = 1;
+        i[9] = 1;
+        i[10] = 0;
+
+        System.out.println(GetMaxConsecutiveOnes(i,2));
+
     }
 }

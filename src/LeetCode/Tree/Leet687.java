@@ -1,6 +1,5 @@
 package LeetCode.Tree;
 
-import com.sun.org.apache.regexp.internal.RE;
 
 /**
  * @author: Li jx
@@ -8,26 +7,32 @@ import com.sun.org.apache.regexp.internal.RE;
  * @description:
  */
 public class Leet687 {
-//    int max = 0;
-//    public int longestUnivaluePath(TreeNode root) {
-//        find(root);
-//        return max;
-//    }
-//    public int find(TreeNode root) {
-//        if (root == null) {
-//            return 0;
-//        }
-//        int left = find(root.left);
-//        int right = find(root.right);
-//        if (root.left != null && root.val == root.left.val) {
-//            left += 1;
-//        }
-//        if (root.right != null && root.val == root.right.val) {
-//            right += 1;
-//        }
-//        max = Math.max(max, left + right);
-//        return Math.max(left, right);
-//    }
-//
+    int res = 0;
+    public int longestUnivaluePath(TreeNode root) {
+        dfs(root);
+        return res;
+    }
+
+    public int dfs(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int leftMax = dfs(node.left);
+        int rightMax = dfs(node.right);
+        int left = 0;
+        int right = 0;
+        if (node.left != null && node.left.val == node.val) {
+            left += leftMax + 1;
+        }
+        if (node.right != null && node.right.val == node.val) {
+            right += rightMax + 1;
+        }
+
+        res = Math.max(res, left + right );
+        return Math.max(left, right);
+    }
+
+
 
 }
